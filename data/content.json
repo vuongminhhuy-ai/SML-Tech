@@ -1,0 +1,101 @@
+{
+    "hero": {
+        "title_vi": "Giảm Lãng Phí 5-8% Với Hệ Thống Đo Khổ Thông Minh",
+        "title_en": "Reduce Waste by 5-8% With Smart Width Measurement System",
+        "subtitle_vi": "Tiết kiệm 500 triệu - 2 tỷ đồng/năm cho nhà máy nhựa của bạn",
+        "subtitle_en": "Save VND 500 million - 2 billion per year for your plastic factory",
+        "description_vi": "SML TECH cung cấp hệ thống đo khổ màng tự động với công nghệ IoT/ERP, giúp nhà máy nhựa Việt Nam giảm lãng phí nguyên liệu và nâng cao chất lượng sản phẩm.",
+        "description_en": "SML TECH provides automated film width measurement system with IoT/ERP integration, helping Vietnamese plastic manufacturers reduce material waste and improve product quality.",
+        "cta_primary_vi": "Đăng Ký Demo Miễn Phí",
+        "cta_primary_en": "Request Free Demo",
+        "cta_secondary_vi": "Xem Video 2 Phút",
+        "cta_secondary_en": "Watch 2-Min Video"
+    },
+    "values": [
+        {
+            "id": "accuracy",
+            "title_vi": "Đo Chính Xác ±0.5mm",
+            "title_en": "Accurate Measurement ±0.5mm",
+            "points_vi": [
+                "Sensor siêu âm công nghiệp từ Banner/Pepperl+Fuchs",
+                "Thuật toán lọc nhiễu thông minh, ổn định 98%+",
+                "Phù hợp với màng trong suốt (PE, PP, PVC)"
+            ],
+            "points_en": [
+                "Industrial ultrasonic sensors from Banner/Pepperl+Fuchs",
+                "Smart noise filtering algorithm, 98%+ stability",
+                "Compatible with transparent films (PE, PP, PVC)"
+            ]
+        },
+        {
+            "id": "iot",
+            "title_vi": "IoT/ERP Tích Hợp",
+            "title_en": "IoT/ERP Integration",
+            "points_vi": [
+                "Dashboard real-time trên web/mobile",
+                "API mở (MQTT, Modbus) kết nối dễ dàng",
+                "Tự động xuất báo cáo Cp/Cpk cho ISO 9001"
+            ],
+            "points_en": [
+                "Real-time dashboard on web/mobile",
+                "Open API (MQTT, Modbus) for easy integration",
+                "Auto-generate Cp/Cpk reports for ISO 9001"
+            ]
+        },
+        {
+            "id": "support",
+            "title_vi": "Hỗ Trợ Tại VN < 4h",
+            "title_en": "Vietnam Support < 4 Hours",
+            "points_vi": [
+                "Kỹ thuật viên tại TP.HCM, Bình Dương, Đồng Nai",
+                "Hotline 24/7: 098-765-4321",
+                "Bảo hành 12-24 tháng, phụ tùng sẵn có"
+            ],
+            "points_en": [
+                "Technicians in HCMC, Binh Duong, Dong Nai",
+                "24/7 Hotline: 098-765-4321",
+                "12-24 months warranty, spare parts available"
+            ]
+        }
+    ],
+    "cta": {
+        "title_vi": "Sẵn Sàng Tối Ưu Sản Xuất?",
+        "title_en": "Ready to Optimize Production?",
+        "subtitle_vi": "Đăng ký ngay để nhận tư vấn miễn phí từ chuyên gia",
+        "subtitle_en": "Register now for free consultation from experts"
+    },
+    "testimonial": {
+        "name": "Ông Nguyễn Văn A",
+        "title": "Giám Đốc Kỹ Thuật",
+        "company": "Công ty ABC",
+        "quote_vi": "Trước đây chúng tôi đo bằng thước, rất mất thời gian và không chính xác. Giờ có SML TECH, chúng tôi biết chính xác từng giây, còn có dữ liệu để tối ưu quy trình nữa. Đầu tư 70 triệu, thu hồi được trong 7 tháng.",
+        "quote_en": "Previously we measured with rulers, very time-consuming and inaccurate. Now with SML TECH, we know precisely every second, plus have data to optimize processes. 70 million investment, recovered in 7 months.",
+        "results": {
+            "waste_reduction": "6.8% → 2.1%",
+            "monthly_saving": "85 triệu/tháng",
+            "roi_months": "7.2 tháng"
+        }
+    },
+    "stats": [
+        {
+            "value": "100%",
+            "label_vi": "Uptime trong pilot test",
+            "label_en": "Uptime in pilot test"
+        },
+        {
+            "value": "4.7%",
+            "label_vi": "Giảm lãng phí trung bình",
+            "label_en": "Average waste reduction"
+        },
+        {
+            "value": "6-8 tháng",
+            "label_vi": "Thời gian hoàn vốn",
+            "label_en": "Payback period"
+        },
+        {
+            "value": "20+",
+            "label_vi": "Nhà máy đã demo",
+            "label_en": "Factories demoed"
+        }
+    ]
+}
