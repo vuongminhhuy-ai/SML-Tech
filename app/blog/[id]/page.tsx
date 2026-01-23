@@ -28,7 +28,12 @@ export default function ArticlePage({ params }: { params: { id: string } }) {
                         </span>
                     </nav>
 
-                    {articleId === '1' ? <Article1 /> : articleId === '2' ? <Article2 /> : <Article1 />}
+                    {articleId === '1' ? <Article1 /> :
+                        articleId === '2' ? <Article2 /> :
+                            articleId === '3' ? <Article3 /> :
+                                articleId === '4' ? <Article4 /> :
+                                    articleId === '5' ? <Article5 /> :
+                                        <Article1 />}
 
                     {/* CTA Box */}
                     <div className="mt-16 pt-12 border-t">
