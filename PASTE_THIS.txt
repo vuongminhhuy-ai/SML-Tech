@@ -1,0 +1,52 @@
+﻿// Paste 3 functions này vào cuối file page.tsx (sau dòng 424)
+
+function Article3() {
+    const { language } = useLanguage()
+    return (
+        <>
+            <header className="mb-12">
+                <div className="text-accent text-sm font-semibold mb-3 uppercase">
+                    {language === 'vi' ? 'Tối Ưu Chi Phí' : 'Cost Optimization'}
+                </div>
+                <h1 className="text-4xl font-bold mb-6">
+                    {language === 'vi' ? 'Tiết Kiệm Biên Màng: Chạy Đúng Khổ = Lợi Nhuận Tăng' : 'Edge Trim Savings'}
+                </h1>
+            </header>
+            <div className="prose prose-lg">
+                <p>Nội dung bài 3 về edge trim...</p>
+            </div>
+        </>
+    )
+}
+
+function Article4() {
+    const { language } = useLanguage()
+    return (
+        <>
+            <header className="mb-12">
+                <h1 className="text-4xl font-bold">
+                    {language === 'vi' ? 'Hiểu Rõ Cpk' : 'Understanding Cpk'}
+                </h1>
+            </header>
+            <div className="prose prose-lg">
+                <p>Nội dung bài 4 về Cpk...</p>
+            </div>
+        </>
+    )
+}
+
+function Article5() {
+    const { language } = useLanguage()
+    return (
+        <>
+            <header className="mb-12">
+                <h1 className="text-4xl font-bold">
+                    {language === 'vi' ? 'Kiểm Soát Khổ Màng' : 'Width Control'}
+                </h1>
+            </header>
+            <div className="prose prose-lg">
+                <p>Nội dung bài 5...</p>
+            </div>
+        </>
+    )
+}
