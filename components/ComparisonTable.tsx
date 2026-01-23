@@ -71,6 +71,15 @@ export default function ComparisonTable() {
                     <p className="text-lg text-gray-600">Lựa chọn tối ưu cho doanh nghiệp Việt Nam</p>
                 </div>
 
+                {/* Comparison Infographic */}
+                <div className="max-w-5xl mx-auto mb-12">
+                    <img
+                        src="/images/comparison.png"
+                        alt="Comparison: SML TECH vs Competitors"
+                        className="w-full h-auto rounded-xl shadow-lg"
+                    />
+                </div>
+
                 {/* Comparison Table */}
                 <div className="max-w-5xl mx-auto overflow-x-auto">
                     <table className="w-full border-collapse">

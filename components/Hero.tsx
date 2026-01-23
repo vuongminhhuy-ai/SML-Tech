@@ -74,44 +74,23 @@ export default function Hero() {
                     {/* Right Image/Product */}
                     <div className="relative hidden lg:block">
                         <div className="relative z-10">
-                            {/* Placeholder for product image */}
-                            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                                <div className="aspect-square bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex items-center justify-center">
-                                    <div className="text-center text-white">
-                                        <div className="text-6xl mb-4">📊</div>
-                                        <div className="text-xl font-semibold">SML-100</div>
-                                        <div className="text-sm text-gray-300">Smart Width Measurement</div>
-                                    </div>
-                                </div>
+                            {/* Professional Product Image */}
+                            <div className="rounded-2xl overflow-hidden shadow-2xl">
+                                <img
+                                    src="/images/hero-product.png"
+                                    alt="SML-100 Smart Width Measurement System"
+                                    className="w-full h-auto"
+                                />
                             </div>
                         </div>
 
-                        {/* Floating Dashboard Preview */}
-                        <div className="absolute -right-8 top-1/2 -translate-y-1/2 bg-white rounded-lg shadow-2xl p-4 w-64">
-                            <div className="text-sm font-semibold text-gray-800 mb-2">Real-time Dashboard</div>
-                            <div className="space-y-2">
-                                <div className="flex justify-between text-xs">
-                                    <span className="text-gray-600">Current Width:</span>
-                                    <span className="font-bold text-accent">850.5 mm</span>
-                                </div>
-                                <div className="flex justify-between text-xs">
-                                    <span className="text-gray-600">Target:</span>
-                                    <span>850.0 mm</span>
-                                </div>
-                                <div className="flex justify-between text-xs">
-                                    <span className="text-gray-600">Cp/Cpk:</span>
-                                    <span className="text-success font-semibold">1.67 / 1.45</span>
-                                </div>
-                                <div className="h-16 bg-gray-100 rounded flex items-end space-x-1 p-2">
-                                    {[...Array(20)].map((_, i) => (
-                                        <div
-                                            key={i}
-                                            className="flex-1 bg-accent/70 rounded-t"
-                                            style={{ height: `${Math.random() * 60 + 40}%` }}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
+                        {/* Floating Dashboard Preview - Using Real Screenshot */}
+                        <div className="absolute -right-8 top-1/2 -translate-y-1/2 rounded-lg shadow-2xl overflow-hidden w-80">
+                            <img
+                                src="/images/dashboard.png"
+                                alt="Real-time Dashboard Preview"
+                                className="w-full h-auto"
+                            />
                         </div>
                     </div>
                 </div>
