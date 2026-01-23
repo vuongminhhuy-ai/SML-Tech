@@ -3,17 +3,18 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Menu, X, ChevronDown } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [language, setLanguage] = useState<'vi' | 'en'>('vi')
+    const { language, setLanguage, t } = useLanguage()
 
     const navigation = [
-        { name: language === 'vi' ? 'Sản Phẩm' : 'Products', href: '/san-pham' },
-        { name: language === 'vi' ? 'Giải Pháp' : 'Solutions', href: '/giai-phap' },
-        { name: language === 'vi' ? 'Kiến Thức' : 'Knowledge', href: '/kien-thuc' },
-        { name: language === 'vi' ? 'Về Chúng Tôi' : 'About', href: '/ve-chung-toi' },
-        { name: language === 'vi' ? 'Liên Hệ' : 'Contact', href: '/lien-he' },
+        { name: t('Sản Phẩm', 'Products'), href: '/san-pham' },
+        { name: t('Giải Pháp', 'Solutions'), href: '/giai-phap' },
+        { name: t('Kiến Thức', 'Knowledge'), href: '/blog' },
+        { name: t('Về Chúng Tôi', 'About'), href: '/ve-chung-toi' },
+        { name: t('Liên Hệ', 'Contact'), href: '/lien-he' },
     ]
 
     return (
@@ -45,13 +46,26 @@ export default function Header() {
                     {/* Right Actions */}
                     <div className="hidden md:flex items-center space-x-4">
                         {/* Language Toggle */}
-                        <button
-                            onClick={() => setLanguage(language === 'vi' ? 'en' : 'vi')}
-                            className="flex items-center space-x-1 text-gray-600 hover:text-accent"
-                        >
-                            <span className="font-medium">{language.toUpperCase()}</span>
-                            <ChevronDown className="w-4 h-4" />
-                        </button>
+                        <div className="flex items-center border border-gray-300 rounded-lg overflow-hidden">
+                            <button
+                                onClick={() => setLanguage('vi')}
+                                className={`px-3 py-1.5 text-sm font-medium transition-colors ${language === 'vi'
+                                        ? 'bg-accent text-white'
+                                        : 'bg-white text-gray-600 hover:bg-gray-50'
+                                    }`}
+                            >
+                                VN
+                            </button>
+                            <button
+                                onClick={() => setLanguage('en')}
+                                className={`px-3 py-1.5 text-sm font-medium transition-colors ${language === 'en'
+                                        ? 'bg-accent text-white'
+                                        : 'bg-white text-gray-600 hover:bg-gray-50'
+                                    }`}
+                            >
+                                EN
+                            </button>
+                        </div>
 
                         {/* Phone */}
                         <a
@@ -64,7 +78,7 @@ export default function Header() {
 
                         {/* CTA Button */}
                         <Link href="#demo" className="btn-primary">
-                            {language === 'vi' ? 'Đặt Demo Miễn Phí' : 'Request Free Demo'}
+                            {t('Đặt Demo Miễn Phí', 'Request Free Demo')}
                         </Link>
                     </div>
 
@@ -91,11 +105,33 @@ export default function Header() {
                             </Link>
                         ))}
                         <div className="mt-4 space-y-3">
+                            {/* Mobile Language Toggle */}
+                            <div className="flex items-center space-x-2">
+                                <button
+                                    onClick={() => setLanguage('vi')}
+                                    className={`flex-1 py-2 text-sm font-medium rounded ${language === 'vi'
+                                            ? 'bg-accent text-white'
+                                            : 'bg-gray-100 text-gray-600'
+                                        }`}
+                                >
+                                    Tiếng Việt
+                                </button>
+                                <button
+                                    onClick={() => setLanguage('en')}
+                                    className={`flex-1 py-2 text-sm font-medium rounded ${language === 'en'
+                                            ? 'bg-accent text-white'
+                                            : 'bg-gray-100 text-gray-600'
+                                        }`}
+                                >
+                                    English
+                                </button>
+                            </div>
+
                             <a href="tel:0987654321" className="block text-primary font-semibold">
                                 📞 098-765-4321
                             </a>
                             <Link href="#demo" className="btn-primary block text-center">
-                                {language === 'vi' ? 'Đặt Demo Miễn Phí' : 'Request Free Demo'}
+                                {t('Đặt Demo Miễn Phí', 'Request Free Demo')}
                             </Link>
                         </div>
                     </div>

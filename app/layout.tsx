@@ -35,7 +35,11 @@ export default function RootLayout({
 }) {
     return (
         <html lang="vi" className={`${openSans.variable} ${montserrat.variable}`}>
-            <body className="font-sans">{children}</body>
+            <body className="font-sans">
+                <LanguageProvider>
+                    {children}
+                </LanguageProvider>
+            </body>
         </html>
     )
 }

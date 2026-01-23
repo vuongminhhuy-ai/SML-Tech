@@ -3,9 +3,11 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Play } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function Hero() {
     const [showVideo, setShowVideo] = useState(false)
+    const { t } = useLanguage()
 
     return (
         <section className="relative bg-gradient-to-br from-primary via-primary-light to-primary min-h-[70vh] flex items-center overflow-hidden">
@@ -22,23 +24,33 @@ export default function Hero() {
                     {/* Left Content */}
                     <div className="text-white space-y-6">
                         <h1 className="heading-1">
-                            Giảm Lãng Phí 5-8% Với
-                            <span className="block text-accent">Hệ Thống Đo Khổ Thông Minh</span>
+                            {t(
+                                'Giảm Lãng Phí 5-8% Với',
+                                'Reduce Waste by 5-8% With'
+                            )}
+                            <span className="block text-accent">
+                                {t('Hệ Thống Đo Khổ Thông Minh', 'Smart Width Measurement System')}
+                            </span>
                         </h1>
 
                         <p className="text-xl text-gray-200">
-                            Tiết kiệm 500 triệu - 2 tỷ đồng/năm cho nhà máy nhựa của bạn
+                            {t(
+                                'Tiết kiệm 500 triệu - 2 tỷ đồng/năm cho nhà máy nhựa của bạn',
+                                'Save VND 500 million - 2 billion per year for your plastic factory'
+                            )}
                         </p>
 
                         <p className="text-gray-300">
-                            SML TECH cung cấp hệ thống đo khổ màng tự động với công nghệ IoT/ERP,
-                            giúp nhà máy nhựa Việt Nam giảm lãng phí nguyên liệu và nâng cao chất lượng sản phẩm.
+                            {t(
+                                'SML TECH cung cấp hệ thống đo khổ màng tự động với công nghệ IoT/ERP, giúp nhà máy nhựa Việt Nam giảm lãng phí nguyên liệu và nâng cao chất lượng sản phẩm.',
+                                'SML TECH provides automated film width measurement system with IoT/ERP integration, helping Vietnamese plastic manufacturers reduce material waste and improve product quality.'
+                            )}
                         </p>
 
                         {/* CTAs */}
                         <div className="flex flex-wrap gap-4">
                             <Link href="#demo" className="btn-primary bg-accent hover:bg-accent-hover">
-                                Đăng Ký Demo Miễn Phí
+                                {t('Đăng Ký Demo Miễn Phí', 'Request Free Demo')}
                             </Link>
 
                             <button
@@ -46,7 +58,7 @@ export default function Hero() {
                                 className="btn-secondary bg-white/10 border-white text-white hover:bg-white hover:text-primary"
                             >
                                 <Play className="w-5 h-5 inline mr-2" />
-                                Xem Video 2 Phút
+                                {t('Xem Video 2 Phút', 'Watch 2-Min Video')}
                             </button>
                         </div>
 
@@ -54,19 +66,19 @@ export default function Hero() {
                         <div className="flex flex-wrap gap-6 pt-6 border-t border-white/20">
                             <div>
                                 <div className="text-accent font-bold text-lg">±0.5mm</div>
-                                <div className="text-sm text-gray-300">Chính Xác</div>
+                                <div className="text-sm text-gray-300">{t('Chính Xác', 'Accurate')}</div>
                             </div>
                             <div>
-                                <div className="text-accent font-bold text-lg">6-12 tháng</div>
+                                <div className="text-accent font-bold text-lg">{t('6-12 tháng', '6-12 months')}</div>
                                 <div className="text-sm text-gray-300">ROI</div>
                             </div>
                             <div>
                                 <div className="text-accent font-bold text-lg">24/7</div>
-                                <div className="text-sm text-gray-300">Hỗ Trợ</div>
+                                <div className="text-sm text-gray-300">{t('Hỗ Trợ', 'Support')}</div>
                             </div>
                             <div>
                                 <div className="text-accent font-bold text-lg">Made in VN</div>
-                                <div className="text-sm text-gray-300">Sản xuất tại VN</div>
+                                <div className="text-sm text-gray-300">{t('Sản xuất tại VN', 'Made in Vietnam')}</div>
                             </div>
                         </div>
                     </div>
@@ -107,10 +119,10 @@ export default function Hero() {
                             onClick={() => setShowVideo(false)}
                             className="absolute -top-12 right-0 text-white hover:text-accent"
                         >
-                            Close ✕
+                            {t('Đóng', 'Close')} ✕
                         </button>
                         <div className="aspect-video bg-gray-900 rounded-lg flex items-center justify-center">
-                            <p className="text-white">Video demo placeholder - thêm YouTube embed ở đây</p>
+                            <p className="text-white">{t('Video demo sẽ được thêm ở đây', 'Demo video will be added here')}</p>
                         </div>
                     </div>
                 </div>
