@@ -84,7 +84,7 @@ export default function Hero() {
                     </div>
 
                     {/* Right Image/Product */}
-                    <div className="relative hidden lg:block">
+                    <div className="relative">
                         <div className="relative z-10">
                             {/* Professional Product Image */}
                             <div className="rounded-2xl overflow-hidden shadow-2xl">
@@ -96,8 +96,8 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Floating Dashboard Preview - Using Real Screenshot */}
-                        <div className="absolute -right-8 top-1/2 -translate-y-1/2 rounded-lg shadow-2xl overflow-hidden w-80">
+                        {/* Floating Dashboard Preview - Using Real Screenshot - Desktop Only */}
+                        <div className="hidden lg:block absolute -right-8 top-1/2 -translate-y-1/2 rounded-lg shadow-2xl overflow-hidden w-80">
                             <img
                                 src="/images/dashboard.png"
                                 alt="Real-time Dashboard Preview"
