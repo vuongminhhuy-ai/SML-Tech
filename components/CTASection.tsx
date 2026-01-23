@@ -6,15 +6,17 @@ import { Phone, Send } from 'lucide-react'
 export default function CTASection() {
     const [formData, setFormData] = useState({
         name: '',
+        email: '',
         phone: '',
         company: '',
     })
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        // TODO: Connect to Supabase or API
         console.log('Form submitted:', formData)
-        alert('Cảm ơn! Chúng tôi sẽ liên hệ với bạn sớm nhất.')
+        alert(`Cảm ơn ${formData.name}! Chúng tôi sẽ liên hệ qua email ${formData.email} hoặc phone ${formData.phone} sớm nhất.`)
+        // Reset form
+        setFormData({ name: '', email: '', phone: '', company: '' })
     }
 
     return (
@@ -57,6 +59,15 @@ export default function CTASection() {
                                     required
                                     value={formData.name}
                                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent text-gray-900"
+                                />
+
+                                <input
+                                    type="email"
+                                    placeholder="Email *"
+                                    required
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-accent focus:border-transparent text-gray-900"
                                 />
 
