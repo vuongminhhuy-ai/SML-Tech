@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Open_Sans, Montserrat } from 'next/font/google'
 import './globals.css'
+import { LanguageProvider } from '@/lib/LanguageContext'
 
 const openSans = Open_Sans({
     subsets: ['latin', 'vietnamese'],
