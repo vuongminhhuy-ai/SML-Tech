@@ -40,6 +40,7 @@ export default function RootLayout({
             <body className="font-sans">
                 <LanguageProvider>
                     {children}
+                    <Chatbot />
                 </LanguageProvider>
             </body>
         </html>
