@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="400" height="100">
+  <!-- Icon/Symbol -->
+  <g transform="translate(10, 20)">
+    <!-- Measurement ruler icon with digital elements -->
+    <rect x="0" y="25" width="50" height="6" fill="#1A1F3C" rx="3"/>
+    <circle cx="5" cy="28" r="3" fill="#00BCD4"/>
+    <circle cx="25" cy="28" r="3" fill="#00BCD4"/>
+    <circle cx="45" cy="28" r="3" fill="#00BCD4"/>
+    
+    <!-- Digital wave pattern -->
+    <path d="M 5 45 L 15 40 L 25 45 L 35 40 L 45 45" 
+          stroke="#00BCD4" 
+          stroke-width="2" 
+          fill="none" 
+          stroke-linecap="round"/>
+    
+    <!-- Target circle -->
+    <circle cx="25" cy="15" r="8" fill="none" stroke="#1A1F3C" stroke-width="2"/>
+    <circle cx="25" cy="15" r="4" fill="none" stroke="#00BCD4" stroke-width="2"/>
+    <circle cx="25" cy="15" r="2" fill="#00BCD4"/>
+  </g>
+  
+  <!-- SML text -->
+  <text x="80" y="55" 
+        font-family="Arial, sans-serif" 
+        font-size="48" 
+        font-weight="bold" 
+        fill="#1A1F3C">SML</text>
+  
+  <!-- TECH text -->
+  <text x="180" y="55" 
+        font-family="Arial, sans-serif" 
+        font-size="48" 
+        font-weight="bold" 
+        fill="#00BCD4">TECH</text>
+  
+  <!-- Subtitle -->
+  <text x="80" y="75" 
+        font-family="Arial, sans-serif" 
+        font-size="10" 
+        font-weight="normal" 
+        fill="#6B7280" 
+        letter-spacing="2">SIGMA METRIC LAB</text>
+</svg>
