@@ -422,22 +422,147 @@ function Article2() {
         </>
     )
 }
-// Paste 3 functions này vào cuối file page.tsx (sau dòng 424)
 
 function Article3() {
     const { language } = useLanguage()
+
     return (
         <>
             <header className="mb-12">
-                <div className="text-accent text-sm font-semibold mb-3 uppercase">
+                <div className="text-accent text-sm font-semibold mb-3 uppercase tracking-wide">
                     {language === 'vi' ? 'Tối Ưu Chi Phí' : 'Cost Optimization'}
                 </div>
-                <h1 className="text-4xl font-bold mb-6">
-                    {language === 'vi' ? 'Tiết Kiệm Biên Màng: Chạy Đúng Khổ = Lợi Nhuận Tăng' : 'Edge Trim Savings'}
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    {language === 'vi'
+                        ? 'Tiết Kiệm Biên Màng: Chạy Đúng Khổ = Lợi Nhuận Tăng'
+                        : 'Edge Trim Savings: Accurate Width = Higher Profit'
+                    }
                 </h1>
+                <div className="flex items-center text-gray-600 text-sm space-x-4 pb-6 border-b">
+                    <span className="flex items-center">
+                        <span className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center mr-2">👤</span>
+                        SML TECH Team
+                    </span>
+                    <span>•</span>
+                    <span>📅 20/01/2026</span>
+                    <span>•</span>
+                    <span>⏱️ {language === 'vi' ? '6 phút đọc' : '6 min read'}</span>
+                </div>
             </header>
-            <div className="prose prose-lg">
-                <p>Nội dung bài 3 về edge trim...</p>
+
+            <div className="prose prose-lg max-w-none">
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Vấn Đề: Lãng Phí Biên Màng' : 'Problem: Edge Trim Waste'}
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                    {language === 'vi'
+                        ? 'Khi sản xuất màng nhựa, nhiều nhà máy thường chạy "rộng hơn" khổ yêu cầu để đảm bảo an toàn. Tuy nhiên, phần dư này (edge trim) bị cắt bỏ và tái chế với giá rẻ hơn nhiều so với nguyên liệu virgin.'
+                        : 'When producing plastic film, many factories run "wider" than required to ensure safety. However, this excess (edge trim) is cut and recycled at much lower prices than virgin material.'
+                    }
+                </p>
+
+                <div className="bg-red-50 border-l-4 border-red-500 p-6 my-8">
+                    <p className="text-red-900 font-semibold mb-2">
+                        ⚠️ {language === 'vi' ? 'Chi Phí Ẩn Của Chạy Rộng' : 'Hidden Cost of Running Wide'}
+                    </p>
+                    <ul className="text-red-800 space-y-2">
+                        <li>• {language === 'vi' ? 'Nguyên liệu virgin: 25,000 VNĐ/kg' : 'Virgin material: VND 25,000/kg'}</li>
+                        <li>• {language === 'vi' ? 'Tái chế edge trim: 8,000 VNĐ/kg' : 'Recycled edge trim: VND 8,000/kg'}</li>
+                        <li>• {language === 'vi' ? 'Mất giá: 17,000 VNĐ/kg!' : 'Value loss: VND 17,000/kg!'}</li>
+                    </ul>
+                </div>
+
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Tính Toán Tiết Kiệm' : 'Savings Calculation'}
+                </h2>
+
+                <h3 className="text-2xl font-semibold mt-8 mb-4">
+                    {language === 'vi' ? 'Ví Dụ Thực Tế' : 'Real Example'}
+                </h3>
+
+                <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                    <p className="font-bold mb-4">{language === 'vi' ? 'Kịch Bản:' : 'Scenario:'}</p>
+                    <ul className="space-y-2">
+                        <li>• {language === 'vi' ? 'Khổ yêu cầu: 850mm' : 'Required width: 850mm'}</li>
+                        <li>• {language === 'vi' ? 'Khổ chạy thực tế: 870mm (rộng hơn 20mm)' : 'Actual running width: 870mm (20mm wider)'}</li>
+                        <li>• {language === 'vi' ? 'Sản lượng: 100 tấn/tháng' : 'Production: 100 tons/month'}</li>
+                        <li>• {language === 'vi' ? 'Edge trim: (20mm/870mm) × 100 tấn = 2.3 tấn/tháng' : 'Edge trim: (20mm/870mm) × 100 tons = 2.3 tons/month'}</li>
+                    </ul>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6 my-8">
+                    <div className="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+                        <p className="text-sm font-semibold text-red-500 mb-2">{language === 'vi' ? 'Chi Phí Hiện Tại' : 'Current Cost'}</p>
+                        <p className="text-4xl font-bold text-red-600 mb-2">
+                            {language === 'vi' ? '39 triệu' : 'VND 39M'}
+                        </p>
+                        <p className="text-sm text-red-700">
+                            {language === 'vi' ? '2.3 tấn × 17,000 VNĐ/kg' : '2.3 tons × VND 17,000/kg'}
+                        </p>
+                    </div>
+
+                    <div className="bg-green-50 border-2 border-green-500 rounded-lg p-6">
+                        <p className="text-sm font-semibold text-green-500 mb-2">{language === 'vi' ? 'Với SML TECH' : 'With SML TECH'}</p>
+                        <p className="text-4xl font-bold text-green-600 mb-2">
+                            {language === 'vi' ? '468 triệu/năm' : 'VND 468M/year'}
+                        </p>
+                        <p className="text-sm text-green-700">
+                            {language === 'vi' ? 'Tiết kiệm 39 triệu × 12 tháng' : 'Save VND 39M × 12 months'}
+                        </p>
+                    </div>
+                </div>
+
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Giải Pháp: Chạy Đúng Khổ' : 'Solution: Run Accurate Width'}
+                </h2>
+
+                <div className="bg-gradient-to-br from-blue-50 to-green-50 rounded-xl p-8 my-8 border-2 border-blue-300">
+                    <h3 className="text-2xl font-bold mb-6 text-center">
+                        {language === 'vi' ? 'SML TECH Giúp Bạn:' : 'SML TECH Helps You:'}
+                    </h3>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                            <div className="text-4xl mb-4">🎯</div>
+                            <h4 className="font-bold mb-2">{language === 'vi' ? 'Chạy Chính Xác' : 'Run Precisely'}</h4>
+                            <p className="text-sm text-gray-700">
+                                {language === 'vi'
+                                    ? 'Đo liên tục ±0.5mm → Tự tin chạy đúng 850mm'
+                                    : 'Continuous ±0.5mm measurement → Confident to run exactly 850mm'}
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                            <div className="text-4xl mb-4">💰</div>
+                            <h4 className="font-bold mb-2">{language === 'vi' ? 'Giảm Edge Trim' : 'Reduce Edge Trim'}</h4>
+                            <p className="text-sm text-gray-700">
+                                {language === 'vi'
+                                    ? '20mm → 5mm = Giảm 75% lãng phí biên'
+                                    : '20mm → 5mm = 75% reduction in edge trim'}
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                            <div className="text-4xl mb-4">📊</div>
+                            <h4 className="font-bold mb-2">{language === 'vi' ? 'Data-Driven' : 'Data-Driven'}</h4>
+                            <p className="text-sm text-gray-700">
+                                {language === 'vi'
+                                    ? 'SPC charts chứng minh quy trình ổn định'
+                                    : 'SPC charts prove process stability'}
+                            </p>
+                        </div>
+
+                        <div className="bg-white rounded-lg p-6 shadow-md">
+                            <div className="text-4xl mb-4">✅</div>
+                            <h4 className="font-bold mb-2">{language === 'vi' ? 'Tăng Lợi Nhuận' : 'Increase Profit'}</h4>
+                            <p className="text-sm text-gray-700">
+                                {language === 'vi'
+                                    ? '3-7% margin improvement = Competitive advantage'
+                                    : '3-7% margin improvement = Competitive advantage'}
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )
@@ -445,15 +570,165 @@ function Article3() {
 
 function Article4() {
     const { language } = useLanguage()
+
     return (
         <>
             <header className="mb-12">
-                <h1 className="text-4xl font-bold">
-                    {language === 'vi' ? 'Hiểu Rõ Cpk' : 'Understanding Cpk'}
+                <div className="text-accent text-sm font-semibold mb-3 uppercase tracking-wide">
+                    {language === 'vi' ? 'Hướng Dẫn SPC' : 'SPC Tutorial'}
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    {language === 'vi'
+                        ? 'Hiểu Rõ Cpk: Chỉ Số Vàng Trong Kiểm Soát Chất Lượng'
+                        : 'Understanding Cpk: The Golden Index in Quality Control'
+                    }
                 </h1>
+                <div className="flex items-center text-gray-600 text-sm space-x-4 pb-6 border-b">
+                    <span className="flex items-center">
+                        <span className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center mr-2">👤</span>
+                        SML TECH Team
+                    </span>
+                    <span>•</span>
+                    <span>📅 18/01/2026</span>
+                    <span>•</span>
+                    <span>⏱️ {language === 'vi' ? '7 phút đọc' : '7 min read'}</span>
+                </div>
             </header>
-            <div className="prose prose-lg">
-                <p>Nội dung bài 4 về Cpk...</p>
+
+            <div className="prose prose-lg max-w-none">
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Cpk Là Gì?' : 'What is Cpk?'}
+                </h2>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                    {language === 'vi'
+                        ? 'Cpk (Process Capability Index) là chỉ số đo lường khả năng của quy trình sản xuất đáp ứng yêu cầu kỹ thuật. Nói đơn giản: "Quy trình của bạn có đủ tốt để sản xuất đúng spec không?"'
+                        : 'Cpk (Process Capability Index) measures the capability of a manufacturing process to meet technical requirements. Simply put: "Is your process good enough to produce within spec?"'
+                    }
+                </p>
+
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-6 my-8">
+                    <p className="text-blue-900 font-semibold mb-2">
+                        💡 {language === 'vi' ? 'Tại Sao Cpk Quan Trọng?' : 'Why is Cpk Important?'}
+                    </p>
+                    <ul className="text-blue-800 space-y-2">
+                        <li>✓ {language === 'vi' ? 'Dự đoán tỷ lệ phế phẩm' : 'Predict defect rate'}</li>
+                        <li>✓ {language === 'vi' ? 'Chứng minh chất lượng cho khách hàng' : 'Prove quality to customers'}</li>
+                        <li>✓ {language === 'vi' ? 'Xác định điểm cần cải thiện' : 'Identify improvement opportunities'}</li>
+                        <li>✓ {language === 'vi' ? 'ISO 9001/IATF 16949 yêu cầu' : 'Required by ISO 9001/IATF 16949'}</li>
+                    </ul>
+                </div>
+
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Công Thức Tính' : 'Calculation Formula'}
+                </h2>
+
+                <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                    <p className="font-bold mb-4">{language === 'vi' ? 'Bước 1: Tính Cp (Process Capability)' : 'Step 1: Calculate Cp (Process Capability)'}</p>
+                    <div className="font-mono text-lg bg-white p-4 rounded border-2">
+                        Cp = (USL - LSL) / (6σ)
+                    </div>
+                    <p className="text-sm text-gray-600 mt-2">
+                        {language === 'vi'
+                            ? 'USL = Upper Spec Limit, LSL = Lower Spec Limit, σ = Standard Deviation'
+                            : 'USL = Upper Spec Limit, LSL = Lower Spec Limit, σ = Standard Deviation'
+                        }
+                    </p>
+                </div>
+
+                <div className="bg-gray-50 p-6 rounded-lg mb-6">
+                    <p className="font-bold mb-4">{language === 'vi' ? 'Bước 2: Tính Cpk (Process Capability Index)' : 'Step 2: Calculate Cpk'}</p>
+                    <div className="font-mono text-lg bg-white p-4 rounded border-2">
+                        Cpk = min[(USL - μ)/(3σ), (μ - LSL)/(3σ)]
+                    </div>
+                    <p className="text-sm text-gray-600 mt-2">
+                        {language === 'vi'
+                            ? 'μ = Mean (trung bình thực tế)'
+                            : 'μ = Mean (actual average)'
+                        }
+                    </p>
+                </div>
+
+                <h3 className="text-2xl font-semibold mt-8 mb-4">
+                    {language === 'vi' ? 'Ví Dụ Thực Tế: Khổ Màng' : 'Real Example: Film Width'}
+                </h3>
+
+                <div className="bg-green-50 p-6 rounded-lg mb-8">
+                    <p className="font-bold mb-3">{language === 'vi' ? 'Thông số:' : 'Specifications:'}</p>
+                    <ul className="space-y-2">
+                        <li>• {language === 'vi' ? 'Target: 850mm' : 'Target: 850mm'}</li>
+                        <li>• {language === 'vi' ? 'Tolerance: ±5mm' : 'Tolerance: ±5mm'}</li>
+                        <li>• USL = 855mm, LSL = 845mm</li>
+                        <li>• {language === 'vi' ? 'Mean thực tế: 849.5mm' : 'Actual Mean: 849.5mm'}</li>
+                        <li>• {language === 'vi' ? 'Std Dev (σ): 1.2mm' : 'Std Dev (σ): 1.2mm'}</li>
+                    </ul>
+
+                    <p className="font-bold mt-4 mb-2">{language === 'vi' ? 'Tính toán:' : 'Calculation:'}</p>
+                    <div className="bg-white p-4 rounded space-y-2 font-mono text-sm">
+                        <p>Cp = (855 - 845) / (6 × 1.2) = 10 / 7.2 = 1.39</p>
+                        <p>Cpk_upper = (855 - 849.5) / (3 × 1.2) = 1.53</p>
+                        <p>Cpk_lower = (849.5 - 845) / (3 × 1.2) = 1.25</p>
+                        <p className="text-green-600 font-bold">Cpk = min(1.53, 1.25) = 1.25 ✓</p>
+                    </div>
+                </div>
+
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Diễn Giải Kết Quả' : 'Interpreting Results'}
+                </h2>
+
+                <div className="overflow-x-auto my-8">
+                    <table className="w-full border-collapse">
+                        <thead>
+                            <tr className="border-b-2 border-gray-300 bg-gray-100">
+                                <th className="text-left p-3">Cpk</th>
+                                <th className="text-center p-3">{language === 'vi' ? 'Ý Nghĩa' : 'Meaning'}</th>
+                                <th className="text-center p-3">{language === 'vi' ? 'Tỷ Lệ Lỗi' : 'Defect Rate'}</th>
+                                <th className="text-center p-3">{language === 'vi' ? 'Đánh Giá' : 'Rating'}</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr className="border-b bg-red-50">
+                                <td className="p-3 font-bold">&lt; 1.0</td>
+                                <td className="text-center p-3">{language === 'vi' ? 'Kém' : 'Poor'}</td>
+                                <td className="text-center p-3 text-red-600">&gt; 2700 ppm</td>
+                                <td className="text-center p-3">❌ {language === 'vi' ? 'Không chấp nhận' : 'Unacceptable'}</td>
+                            </tr>
+                            <tr className="border-b bg-yellow-50">
+                                <td className="p-3 font-bold">1.0 - 1.33</td>
+                                <td className="text-center p-3">{language === 'vi' ? 'Chấp nhận được' : 'Acceptable'}</td>
+                                <td className="text-center p-3 text-yellow-600">63 - 2700 ppm</td>
+                                <td className="text-center p-3">⚠️ {language === 'vi' ? 'Cần theo dõi' : 'Needs monitoring'}</td>
+                            </tr>
+                            <tr className="border-b bg-green-50">
+                                <td className="p-3 font-bold">1.33 - 1.67</td>
+                                <td className="text-center p-3">{language === 'vi' ? 'Tốt' : 'Good'}</td>
+                                <td className="text-center p-3 text-green-600">0.6 - 63 ppm</td>
+                                <td className="text-center p-3">✅ {language === 'vi' ? 'Đạt yêu cầu' : 'Meets requirements'}</td>
+                            </tr>
+                            <tr className="bg-blue-50">
+                                <td className="p-3 font-bold">&gt; 1.67</td>
+                                <td className="text-center p-3">{language === 'vi' ? 'Xuất sắc' : 'Excellent'}</td>
+                                <td className="text-center p-3 text-blue-600">&lt; 0.6 ppm</td>
+                                <td className="text-center p-3">🏆 {language === 'vi' ? 'World class' : 'World class'}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div className="bg-green-50 border-2 border-green-500 rounded-xl p-8 my-8">
+                    <h3 className="text-2xl font-bold mb-4 text-center">
+                        {language === 'vi' ? 'SML TECH Giúp Cải Thiện Cpk' : 'SML TECH Helps Improve Cpk'}
+                    </h3>
+                    <p className="text-gray-700 mb-4">
+                        {language === 'vi'
+                            ? 'Với đo lường chính xác ±0.5mm và feedback real-time:'
+                            : 'With ±0.5mm accurate measurement and real-time feedback:'}
+                    </p>
+                    <ul className="space-y-2">
+                        <li>✓ {language === 'vi' ? 'Giảm Standard Deviation (σ) → Cpk tăng' : 'Reduce Standard Deviation (σ) → Cpk increases'}</li>
+                        <li>✓ {language === 'vi' ? 'Center process (μ) gần Target → Cpk cải thiện' : 'Center process (μ) closer to Target → Cpk improves'}</li>
+                        <li>✓ {language === 'vi' ? 'Data tự động → Dễ tracking và phân tích' : 'Automated data → Easy tracking and analysis'}</li>
+                    </ul>
+                </div>
             </div>
         </>
     )
@@ -461,17 +736,218 @@ function Article4() {
 
 function Article5() {
     const { language } = useLanguage()
+
     return (
         <>
             <header className="mb-12">
-                <h1 className="text-4xl font-bold">
-                    {language === 'vi' ? 'Kiểm Soát Khổ Màng' : 'Width Control'}
+                <div className="text-accent text-sm font-semibold mb-3 uppercase tracking-wide">
+                    {language === 'vi' ? 'Quản Lý Chất Lượng' : 'Quality Management'}
+                </div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    {language === 'vi'
+                        ? 'Kiểm Soát Khổ Màng: Trụ Cột Của Quản Lý Chất Lượng'
+                        : 'Width Control: The Pillar of Quality Management'
+                    }
                 </h1>
+                <div className="flex items-center text-gray-600 text-sm space-x-4 pb-6 border-b">
+                    <span className="flex items-center">
+                        <span className="w-8 h-8 bg-accent/10 rounded-full flex items-center justify-center mr-2">👤</span>
+                        SML TECH Team
+                    </span>
+                    <span>•</span>
+                    <span>📅 16/01/2026</span>
+                    <span>•</span>
+                    <span>⏱️ {language === 'vi' ? '6 phút đọc' : '6 min read'}</span>
+                </div>
             </header>
-            <div className="prose prose-lg">
-                <p>Nội dung bài 5...</p>
+
+            <div className="prose prose-lg max-w-none">
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Tại Sao Khổ Màng Quan Trọng Nhất?' : 'Why is Film Width Most Critical?'}
+                </h2>
+
+                <p className="text-gray-700 leading-relaxed mb-6">
+                    {language === 'vi'
+                        ? 'Trong sản xuất màng nhựa, có hàng chục thông số cần kiểm soát: độ dày, căng, trong suốt, v.v. Nhưng khổ màng (film width) là thông số QUAN TRỌNG NHẤT vì 3 lý do chính:'
+                        : 'In plastic film production, there are dozens of parameters to control: thickness, tension, transparency, etc. But film width is the MOST CRITICAL parameter for 3 main reasons:'
+                    }
+                </p>
+
+                <div className="grid md:grid-cols-3 gap-6 my-8">
+                    <div className="bg-red-50 border-2 border-red-300 rounded-lg p-6">
+                        <div className="text-4xl mb-4">💰</div>
+                        <h3 className="font-bold text-lg mb-2">1. {language === 'vi' ? 'Chi Phí Trực Tiếp' : 'Direct Cost'}</h3>
+                        <p className="text-sm text-gray-700">
+                            {language === 'vi'
+                                ? 'Khổ sai → Lãng phí nguyên liệu → Mất tiền ngay lập tức'
+                                : 'Wrong width → Material waste → Immediate money loss'
+                            }
+                        </p>
+                    </div>
+
+                    <div className="bg-orange-50 border-2 border-orange-300 rounded-lg p-6">
+                        <div className="text-4xl mb-4">😤</div>
+                        <h3 className="font-bold text-lg mb-2">2. {language === 'vi' ? 'Khiếu Nại Khách Hàng' : 'Customer Complaints'}</h3>
+                        <p className="text-sm text-gray-700">
+                            {language === 'vi'
+                                ? 'Khách hàng kiểm tra đầu tiên là khổ màng → Sai = trả hàng'
+                                : 'Customers check width first → Wrong = return'
+                            }
+                        </p>
+                    </div>
+
+                    <div className="bg-yellow-50 border-2 border-yellow-300 rounded-lg p-6">
+                        <div className="text-4xl mb-4">⚙️</div>
+                        <h3 className="font-bold text-lg mb-2">3. {language === 'vi' ? 'Ảnh Hưởng Downstream' : 'Downstream Impact'}</h3>
+                        <p className="text-sm text-gray-700">
+                            {language === 'vi'
+                                ? 'Khổ sai → Máy cắt, in, đóng gói đều bị ảnh hưởng'
+                                : 'Wrong width → Affects cutting, printing, packaging machines'
+                            }
+                        </p>
+                    </div>
+                </div>
+
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Hệ Thống Kiểm Soát Hiệu Quả' : 'Effective Control System'}
+                </h2>
+
+                <h3 className="text-2xl font-semibold mt-8 mb-4">
+                    {language === 'vi' ? '3 Trụ Cột Của Quality Control' : '3 Pillars of Quality Control'}
+                </h3>
+
+                <div className="space-y-6 my-8">
+                    <div className="bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl p-6 border-l-4 border-blue-500">
+                        <h4 className="font-bold text-xl mb-3">
+                            1️⃣ {language === 'vi' ? 'ĐO LƯỜNG (Measurement)' : 'MEASUREMENT'}
+                        </h4>
+                        <p className="text-gray-700 mb-3">
+                            {language === 'vi'
+                                ? 'Không thể kiểm soát những gì không đo được!'
+                                : 'You cannot control what you cannot measure!'}
+                        </p>
+                        <ul className="space-y-2 text-sm">
+                            <li>✓ {language === 'vi' ? 'Đo liên tục (không phải lấy mẫu)' : 'Continuous measurement (not sampling)'}</li>
+                            <li>✓ {language === 'vi' ? 'Độ chính xác cao (±0.5mm)' : 'High accuracy (±0.5mm)'}</li>
+                            <li>✓ {language === 'vi' ? 'Real-time data (không delay)' : 'Real-time data (no delay)'}</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-6 border-l-4 border-green-500">
+                        <h4 className="font-bold text-xl mb-3">
+                            2️⃣ {language === 'vi' ? 'PHÂN TÍCH (Analysis)' : 'ANALYSIS'}
+                        </h4>
+                        <p className="text-gray-700 mb-3">
+                            {language === 'vi'
+                                ? 'Data không có ý nghĩa nếu không phân tích!'
+                                : 'Data is meaningless without analysis!'}
+                        </p>
+                        <ul className="space-y-2 text-sm">
+                            <li>✓ {language === 'vi' ? 'SPC charts (Cp, Cpk tracking)' : 'SPC charts (Cp, Cpk tracking)'}</li>
+                            <li>✓ {language === 'vi' ? 'Trend analysis (phát hiện drift sớm)' : 'Trend analysis (detect drift early)'}</li>
+                            <li>✓ {language === 'vi' ? 'Root cause identification' : 'Root cause identification'}</li>
+                        </ul>
+                    </div>
+
+                    <div className="bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl p-6 border-l-4 border-purple-500">
+                        <h4 className="font-bold text-xl mb-3">
+                            3️⃣ {language === 'vi' ? 'HÀNH ĐỘNG (Action)' : 'ACTION'}
+                        </h4>
+                        <p className="text-gray-700 mb-3">
+                            {language === 'vi'
+                                ? 'Phân tích mà không hành động = lãng phí thời gian!'
+                                : 'Analysis without action = waste of time!'}
+                        </p>
+                        <ul className="space-y-2 text-sm">
+                            <li>✓ {language === 'vi' ? 'Cảnh báo tức thì khi out-of-spec' : 'Instant alerts when out-of-spec'}</li>
+                            <li>✓ {language === 'vi' ? 'Điều chỉnh quy trình ngay' : 'Adjust process immediately'}</li>
+                            <li>✓ {language === 'vi' ? 'Preventive action (tránh lặp lại)' : 'Preventive action (avoid repetition)'}</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2 className="text-3xl font-bold mt-12 mb-6">
+                    {language === 'vi' ? 'Implementation Roadmap' : 'Implementation Roadmap'}
+                </h2>
+
+                <div className="bg-gray-50 p-8 rounded-xl my-8">
+                    <h3 className="text-xl font-bold mb-6">{language === 'vi' ? 'Lộ Trình Triển Khai 4 Giai Đoạn' : '4-Phase Implementation'}</h3>
+
+                    <div className="space-y-4">
+                        <div className="flex items-start space-x-4">
+                            <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">1</div>
+                            <div className="flex-1">
+                                <h4 className="font-bold mb-1">{language === 'vi' ? 'Baseline (Tuần 1)' : 'Baseline (Week 1)'}</h4>
+                                <p className="text-sm text-gray-700">
+                                    {language === 'vi'
+                                        ? 'Lắp SML TECH, thu thập data hiện tại, xác định Cpk baseline'
+                                        : 'Install SML TECH, collect current data, determine baseline Cpk'
+                                    }
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start space-x-4">
+                            <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">2</div>
+                            <div className="flex-1">
+                                <h4 className="font-bold mb-1">{language === 'vi' ? 'Stabilize (Tuần 2-4)' : 'Stabilize (Week 2-4)'}</h4>
+                                <p className="text-sm text-gray-700">
+                                    {language === 'vi'
+                                        ? 'Điều chỉnh quy trình, center mean, giảm variation'
+                                        : 'Adjust process, center mean, reduce variation'
+                                    }
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start space-x-4">
+                            <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">3</div>
+                            <div className="flex-1">
+                                <h4 className="font-bold mb-1">{language === 'vi' ? 'Optimize (Tháng 2-3)' : 'Optimize (Month 2-3)'}</h4>
+                                <p className="text-sm text-gray-700">
+                                    {language === 'vi'
+                                        ? 'Tối ưu parameters, minimize edge trim, maximize output'
+                                        : 'Optimize parameters, minimize edge trim, maximize output'
+                                    }
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start space-x-4">
+                            <div className="w-12 h-12 bg-accent text-white rounded-full flex items-center justify-center font-bold flex-shrink-0">4</div>
+                            <div className="flex-1">
+                                <h4 className="font-bold mb-1">{language === 'vi' ? 'Sustain (Tháng 4+)' : 'Sustain (Month 4+)'}</h4>
+                                <p className="text-sm text-gray-700">
+                                    {language === 'vi'
+                                        ? 'Duy trì cải tiến liên tục, training nhân viên, document best practices'
+                                        : 'Maintain continuous improvement, train staff, document best practices'
+                                    }
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="bg-green-50 border-2 border-green-500 rounded-xl p-8 my-8 text-center">
+                    <h3 className="text-2xl font-bold mb-4">
+                        {language === 'vi' ? '🎯 Kết Quả Mong Đợi' : '🎯 Expected Results'}
+                    </h3>
+                    <div className="grid md:grid-cols-3 gap-6 mt-6">
+                        <div>
+                            <p className="text-4xl font-bold text-green-600 mb-2">Cpk &gt; 1.33</p>
+                            <p className="text-sm text-gray-700">{language === 'vi' ? 'Quy trình ổn định' : 'Stable process'}</p>
+                        </div>
+                        <div>
+                            <p className="text-4xl font-bold text-green-600 mb-2">-70%</p>
+                            <p className="text-sm text-gray-700">{language === 'vi' ? 'Giảm khiếu nại' : 'Complaints reduced'}</p>
+                        </div>
+                        <div>
+                            <p className="text-4xl font-bold text-green-600 mb-2">+5%</p>
+                            <p className="text-sm text-gray-700">{language === 'vi' ? 'Tăng lợi nhuận' : 'Profit increased'}</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </>
     )
 }
-
