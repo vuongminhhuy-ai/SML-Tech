@@ -5,15 +5,15 @@ export default function HowItWorks() {
         {
             number: '01',
             title: 'Đo / Measure',
-            description: '2 sensor siêu âm đo khoảng cách đến mép màng',
-            descriptionEn: 'Two ultrasonic sensors measure distance to film edges',
+            description: 'Cảm biến hiện đại tiến hành đo khổ màng',
+            descriptionEn: 'Modern sensors measure film width',
             icon: '📡',
         },
         {
             number: '02',
             title: 'Xử Lý / Process',
-            description: 'Arduino tính toán độ rộng + lọc nhiễu',
-            descriptionEn: 'Arduino calculates width + filters noise',
+            description: 'Truyền về bộ xử lý để tính toán',
+            descriptionEn: 'Transmit to processor for calculation',
             icon: '🔧',
         },
         {
