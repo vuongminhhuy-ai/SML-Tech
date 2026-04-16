@@ -1,50 +1,53 @@
 'use client'
 
 import { Check, X, AlertTriangle } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function ComparisonTable() {
+    const { t } = useLanguage()
+
     const features = [
         {
-            feature: 'Giá / Price',
-            premium: { value: '200-300tr', status: 'bad' },
-            sml: { value: '60-90tr', status: 'good' },
-            chinese: { value: '15-30tr', status: 'warning' },
+            feature: t('Giá', 'Price'),
+            premium: { value: t('200-300tr', 'VND 200-300m'), status: 'bad' },
+            sml: { value: t('60-90tr', 'VND 60-90m'), status: 'good' },
+            chinese: { value: t('15-30tr', 'VND 15-30m'), status: 'warning' },
         },
         {
-            feature: 'Độ chính xác / Accuracy',
+            feature: t('Độ chính xác', 'Accuracy'),
             premium: { value: '±0.1mm', status: 'good' },
             sml: { value: '±0.5mm', status: 'good' },
             chinese: { value: '±2-5mm', status: 'bad' },
         },
         {
             feature: 'IoT/Cloud',
-            premium: { value: 'Phí thêm', status: 'warning' },
-            sml: { value: 'Miễn phí', status: 'good' },
-            chinese: { value: 'Không có', status: 'bad' },
+            premium: { value: t('Phí thêm', 'Extra fee'), status: 'warning' },
+            sml: { value: t('Miễn phí', 'Free'), status: 'good' },
+            chinese: { value: t('Không có', 'None'), status: 'bad' },
         },
         {
             feature: 'SPC Analytics (Cp/Cpk)',
-            premium: { value: 'Hạn chế', status: 'warning' },
-            sml: { value: 'Full', status: 'good' },
-            chinese: { value: 'Không có', status: 'bad' },
+            premium: { value: t('Hạn chế', 'Limited'), status: 'warning' },
+            sml: { value: t('Full', 'Full'), status: 'good' },
+            chinese: { value: t('Không có', 'None'), status: 'bad' },
         },
         {
-            feature: 'Hỗ trợ kỹ thuật / Support',
-            premium: { value: '2-3 ngày', status: 'warning' },
+            feature: t('Hỗ trợ kỹ thuật', 'Technical Support'),
+            premium: { value: t('2-3 ngày', '2-3 days'), status: 'warning' },
             sml: { value: '<4h', status: 'good' },
-            chinese: { value: 'Email chậm', status: 'bad' },
+            chinese: { value: t('Email chậm', 'Slow email'), status: 'bad' },
         },
         {
-            feature: 'Tùy chỉnh / Customization',
-            premium: { value: 'Rất khó', status: 'bad' },
-            sml: { value: 'Linh hoạt', status: 'good' },
-            chinese: { value: 'Không', status: 'bad' },
+            feature: t('Tùy chỉnh', 'Customization'),
+            premium: { value: t('Rất khó', 'Very hard'), status: 'bad' },
+            sml: { value: t('Linh hoạt', 'Flexible'), status: 'good' },
+            chinese: { value: t('Không', 'No'), status: 'bad' },
         },
         {
-            feature: 'Bảo hành / Warranty',
-            premium: { value: '24 tháng', status: 'good' },
-            sml: { value: '12-24 tháng', status: 'good' },
-            chinese: { value: '6 tháng', status: 'warning' },
+            feature: t('Bảo hành', 'Warranty'),
+            premium: { value: t('24 tháng', '24 months'), status: 'good' },
+            sml: { value: t('12-24 tháng', '12-24 months'), status: 'good' },
+            chinese: { value: t('6 tháng', '6 months'), status: 'warning' },
         },
     ]
 
@@ -66,9 +69,9 @@ export default function ComparisonTable() {
             <div className="container-custom">
                 <div className="text-center mb-12">
                     <h2 className="heading-2 mb-4">
-                        So Sánh SML TECH Với <span className="text-accent">Đối Thủ</span>
+                        {t('So Sánh SML TECH Với', 'Compare SML TECH With')} <span className="text-accent">{t('Đối Thủ', 'Competitors')}</span>
                     </h2>
-                    <p className="text-lg text-gray-600">Lựa chọn tối ưu cho doanh nghiệp Việt Nam</p>
+                    <p className="text-lg text-gray-600">{t('Lựa chọn tối ưu cho doanh nghiệp Việt Nam', 'Optimal choice for enterprise')}</p>
                 </div>
 
                 {/* Comparison Infographic */}
@@ -85,20 +88,20 @@ export default function ComparisonTable() {
                     <table className="w-full border-collapse">
                         <thead>
                             <tr className="border-b-2 border-gray-200">
-                                <th className="p-4 text-left text-gray-600 font-semibold">Tiêu chí</th>
+                                <th className="p-4 text-left text-gray-600 font-semibold">{t('Tiêu chí', 'Criteria')}</th>
                                 <th className="p-4 text-center">
                                     <div className="text-sm text-gray-500 mb-1">🇩🇪 🇺🇸</div>
-                                    <div className="font-semibold">Hàng Cao Cấp</div>
-                                    <div className="text-xs text-gray-500">(Đức/Mỹ)</div>
+                                    <div className="font-semibold">{t('Hàng Cao Cấp', 'Premium Brands')}</div>
+                                    <div className="text-xs text-gray-500">{t('(Đức/Mỹ)', '(Germany/US)')}</div>
                                 </th>
                                 <th className="p-4 text-center bg-accent/5">
                                     <div className="text-sm mb-1">✅</div>
                                     <div className="font-bold text-accent text-lg">SML TECH</div>
-                                    <div className="text-xs text-gray-600">Made in Vietnam</div>
+                                    <div className="text-xs text-gray-600">{t('Made in Vietnam', 'Made in Vietnam')}</div>
                                 </th>
                                 <th className="p-4 text-center">
                                     <div className="text-sm text-gray-500 mb-1">🇨🇳</div>
-                                    <div className="font-semibold">Hàng Trung Quốc</div>
+                                    <div className="font-semibold">{t('Hàng Trung Quốc', 'Chinese Brands')}</div>
                                     <div className="text-xs text-gray-500">(Generic)</div>
                                 </th>
                             </tr>
@@ -134,10 +137,10 @@ export default function ComparisonTable() {
                 {/* Callout */}
                 <div className="mt-8 max-w-3xl mx-auto bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl p-6 text-center border-2 border-accent/20">
                     <div className="text-2xl font-bold text-primary mb-2">
-                        Sweet Spot: Chất Lượng Cao Cấp, Giá Cả Hợp Lý
+                        {t('Sweet Spot: Chất Lượng Cao Cấp, Giá Cả Hợp Lý', 'Sweet Spot: Premium Quality, Reasonable Price')}
                     </div>
                     <p className="text-gray-700">
-                        👉 SML TECH là lựa chọn tối ưu cho doanh nghiệp vừa và nhỏ tại Việt Nam
+                        👉 {t('SML TECH là lựa chọn tối ưu cho doanh nghiệp vừa và nhỏ tại Việt Nam', 'SML TECH is the optimal choice for small and medium enterprises')}
                     </p>
                 </div>
             </div>

@@ -18,6 +18,7 @@ const montserrat = Montserrat({
 })
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://www.smtech.com.vn'),
     title: 'SML TECH - Hệ Thống Đo Khổ Màng Thông Minh | Smart Width Measurement System',
     description: 'Giải pháp đo khổ màng tự động với IoT/ERP, giúp nhà máy nhựa Việt Nam giảm lãng phí 5-8%, tiết kiệm 500 triệu - 2 tỷ/năm. ROI 6-12 tháng.',
     keywords: ['máy đo khổ màng', 'web width measurement', 'đo khổ tự động', 'SML TECH', 'IoT', 'nhựa', 'bao bì'],

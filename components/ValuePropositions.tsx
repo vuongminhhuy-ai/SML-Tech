@@ -1,39 +1,39 @@
 'use client'
 
 import { Target, Cloud, Wrench } from 'lucide-react'
+import { useLanguage } from '@/lib/LanguageContext'
 
 export default function ValuePropositions() {
+    const { t } = useLanguage()
+    
     const values = [
         {
             icon: Target,
-            title: 'Đo Chính Xác ±0.5mm',
-            titleEn: 'Accurate Measurement ±0.5mm',
+            title: t('Đo Chính Xác ±0.5mm', 'Accurate Measurement ±0.5mm'),
             points: [
-                'Sensor siêu âm công nghiệp từ Banner/Pepperl+Fuchs',
-                'Thuật toán lọc nhiễu thông minh, ổn định 98%+',
-                'Phù hợp với màng trong suốt (PE, PP, PVC)',
+                t('Sensor siêu âm công nghiệp từ Banner/Pepperl+Fuchs', 'Industrial ultrasonic sensors from Banner/Pepperl+Fuchs'),
+                t('Thuật toán lọc nhiễu thông minh, ổn định 98%+', 'Smart noise-filtering algorithm, 98%+ stability'),
+                t('Phù hợp với màng trong suốt (PE, PP, PVC)', 'Suitable for transparent films (PE, PP, PVC)'),
             ],
             color: 'from-blue-500 to-cyan-500',
         },
         {
             icon: Cloud,
-            title: 'IoT/ERP Tích Hợp',
-            titleEn: 'IoT/ERP Integration',
+            title: t('IoT/ERP Tích Hợp', 'IoT/ERP Integration'),
             points: [
-                'Dashboard real-time trên web/mobile',
-                'API mở (MQTT, Modbus) kết nối dễ dàng',
-                'Tự động xuất báo cáo Cp/Cpk cho ISO 9001',
+                t('Dashboard real-time trên web/mobile', 'Real-time dashboard on web/mobile'),
+                t('API mở (MQTT, Modbus) kết nối dễ dàng', 'Open API (MQTT, Modbus) for easy connection'),
+                t('Tự động xuất báo cáo Cp/Cpk cho ISO 9001', 'Auto-export Cp/Cpk reports for ISO 9001'),
             ],
             color: 'from-accent to-green-500',
         },
         {
             icon: Wrench,
-            title: 'Hỗ Trợ Tại VN < 4h',
-            titleEn: 'Vietnam Support < 4 Hours',
+            title: t('Hỗ Trợ Tại VN < 4h', 'Vietnam Support < 4 Hours'),
             points: [
-                'Kỹ thuật viên tại TP.HCM, Bình Dương, Đồng Nai',
-                'Hotline 24/7: 098-765-4321',
-                'Bảo hành 12-24 tháng, phụ tùng sẵn có',
+                t('Kỹ thuật viên tại TP.HCM, Bình Dương, Đồng Nai', 'Technicians in HCMC, Binh Duong, Dong Nai'),
+                t('Hotline 24/7: 098-765-4321', '24/7 Hotline: 098-765-4321'),
+                t('Bảo hành 12-24 tháng, phụ tùng sẵn có', '12-24 months warranty, spare parts available'),
             ],
             color: 'from-orange-500 to-red-500',
         },
@@ -45,10 +45,10 @@ export default function ValuePropositions() {
                 {/* Section Header */}
                 <div className="text-center mb-12">
                     <h2 className="heading-2 mb-4">
-                        Tại Sao Chọn <span className="text-accent">SML TECH?</span>
+                        {t('Tại Sao Chọn', 'Why Choose')} <span className="text-accent">SML TECH?</span>
                     </h2>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Kết hợp hoàn hảo giữa công nghệ hiện đại, giá cả hợp lý, và dịch vụ địa phương
+                        {t('Kết hợp hoàn hảo giữa công nghệ hiện đại, giá cả hợp lý, và dịch vụ địa phương', 'Perfect combination of modern technology, reasonable price, and local support')}
                     </p>
                 </div>
 
@@ -62,8 +62,7 @@ export default function ValuePropositions() {
                             </div>
 
                             {/* Title */}
-                            <h3 className="text-2xl font-semibold mb-2">{value.title}</h3>
-                            <p className="text-sm text-gray-500 mb-4">{value.titleEn}</p>
+                            <h3 className="text-2xl font-semibold mb-6">{value.title}</h3>
 
                             {/* Points */}
                             <ul className="space-y-3">

@@ -217,7 +217,7 @@ export default function ROICalculator() {
                                             </span>
                                         </div>
                                         <p className="text-xs text-blue-700">
-                                            {t('Giảm', 'Reduce')} {wasteReduction.toLocaleString()} kg {t('lãng phí', 'waste')} ({currentWaste}% → {afterSMLWaste}%)
+                                            {t('Giảm', 'Reduce')} {wasteReduction.toLocaleString(language === 'vi' ? 'vi-VN' : 'en-US')} kg {t('lãng phí', 'waste')} ({currentWaste}% → {afterSMLWaste}%)
                                         </p>
                                     </div>
 

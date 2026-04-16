@@ -1,33 +1,33 @@
 'use client'
 
+import { useLanguage } from '@/lib/LanguageContext'
+
 export default function HowItWorks() {
+    const { t } = useLanguage()
+
     const steps = [
         {
             number: '01',
-            title: 'Đo / Measure',
-            description: 'Cảm biến hiện đại tiến hành đo khổ màng',
-            descriptionEn: 'Modern sensors measure film width',
+            title: t('Đo', 'Measure'),
+            description: t('Cảm biến hiện đại tiến hành đo khổ màng', 'Modern sensors measure film width'),
             icon: '📡',
         },
         {
             number: '02',
-            title: 'Xử Lý / Process',
-            description: 'Truyền về bộ xử lý để tính toán',
-            descriptionEn: 'Transmit to processor for calculation',
+            title: t('Xử Lý', 'Process'),
+            description: t('Truyền về bộ xử lý để tính toán', 'Transmit to processor for calculation'),
             icon: '🔧',
         },
         {
             number: '03',
-            title: 'Hiển Thị / Display',
-            description: 'HMI 7" hiển thị real-time, cảnh báo sai lệch',
-            descriptionEn: '7" HMI displays real-time, alerts deviation',
+            title: t('Hiển Thị', 'Display'),
+            description: t('HMI 7" hiển thị real-time, cảnh báo sai lệch', '7" HMI displays real-time, alerts deviation'),
             icon: '📱',
         },
         {
             number: '04',
-            title: 'Phân Tích / Analyze',
-            description: 'Cloud dashboard phân tích Cp/Cpk, SPC charts',
-            descriptionEn: 'Cloud dashboard analyzes Cp/Cpk, SPC charts',
+            title: t('Phân Tích', 'Analyze'),
+            description: t('Cloud dashboard phân tích Cp/Cpk, SPC charts', 'Cloud dashboard analyzes Cp/Cpk, SPC charts'),
             icon: '☁️',
         },
     ]
@@ -36,8 +36,8 @@ export default function HowItWorks() {
         <section className="section-padding bg-gradient-to-b from-white to-gray-50">
             <div className="container-custom">
                 <div className="text-center mb-16">
-                    <h2 className="heading-2 mb-4">Cách Hoạt Động</h2>
-                    <p className="text-lg text-gray-600">Quy trình hoạt động đơn giản, hiệu quả</p>
+                    <h2 className="heading-2 mb-4">{t('Cách Hoạt Động', 'How It Works')}</h2>
+                    <p className="text-lg text-gray-600">{t('Quy trình hoạt động đơn giản, hiệu quả', 'Simple and efficient workflow')}</p>
                 </div>
 
                 <div className="grid md:grid-cols-4 gap-6 relative">
@@ -62,7 +62,6 @@ export default function HowItWorks() {
 
                                 {/* Description */}
                                 <p className="text-gray-600 text-sm mb-1">{step.description}</p>
-                                <p className="text-gray-400 text-xs">{step.descriptionEn}</p>
                             </div>
                         </div>
                     ))}
